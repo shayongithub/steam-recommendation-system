@@ -36,7 +36,11 @@ class SteamSpider(scrapy.Spider):
                     review = \
                     ele.xpath('.//div[@class = "col search_reviewscore responsive_secondrow"]/span/@data-tooltip-html')[
                         0]
-                    items['f_n_reviews'] = re.search('[0-9]{3},*[0-9]*,*[0-9]*', review).group()
+
+                    # Cut the string for regex to not capturing the wrong number of reviews
+                    num_reviews = review[review.index("%"):]
+
+                    items['f_n_reviews'] = re.search('[0-9]{1,3},*[0-9]*,*[0-9]*', num_reviews).group()
                     items['g_percent_positive'] = re.search('[0-9]+%+', review).group()
                 except:
                     items['f_n_reviews'] = "No review"
