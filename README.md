@@ -48,7 +48,7 @@ Besides, we use relative path to ensure the users can run it easily without chan
 F:\...\...\...\steamcrawl>.<br />
 
 ## Crawling data
-```
+
 First move to file steamcrawl
 ```cd
 cd /steamcrawl
