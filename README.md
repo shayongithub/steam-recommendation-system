@@ -77,3 +77,4 @@ Example: The User like game 'Dota 2'
 recommend_game('Dota 2')
 ```
 The output is 10 games that have the most similarity to 'Dota 2'.
+![](output.PNG)
