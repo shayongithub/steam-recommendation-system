@@ -61,3 +61,19 @@ scrapy crawl steam
 After running, you will receivei a file `products.csv`, which is our result data.
 
 # Recommendation System
+The system is item-base, using important features (or column in the dataset) of each game to find the similarity between them. 
+The similarity is calculated using Cosine Similarity and the CountVectorizer.
+Install the required librarie pandas and sklearn
+```cd
+pip install -U scikit-learn
+```
+```cd
+pip install pandas
+```
+## Recommending Game
+Run function recommend_game(game). The 'game' argument is the name of the game that user like existed in the dataset.
+Example: The User like game 'Dota 2'
+```cd
+recommend_game('Dota 2')
+```
+The output is 10 games that have the most similarity to 'Dota 2'.
