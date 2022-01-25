@@ -61,9 +61,9 @@ scrapy crawl steam
 After running, you will receivei a file `products.csv`, which is our result data.
 
 # Recommendation System
-The system is item-base, using important features (or column in the dataset) of each game to find the similarity between them. 
+The system is item-based, using important features (or column in the dataset) of each game to find the similarity between them. 
 The similarity is calculated using Cosine Similarity and the CountVectorizer.
-Install the required librarie pandas and sklearn
+Install the required libraries pandas and sklearn
 ```cd
 pip install -U scikit-learn
 ```
