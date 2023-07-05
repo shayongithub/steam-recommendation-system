@@ -16,26 +16,32 @@ git clone https://github.com/shayongithub/stream-recommendation-system
 ```
 As we mentioned above, we use Pycharm as an IDE for this project, you can also you other IDE or run it directly from your terminal. If you want to download Pycharm, you can find it here: https://www.jetbrains.com/pycharm/download/#section=windows
 
-Scrapy works best with python 3.6 – 3.7, so we recommend you create an environment with this version inside, we have undergone some troubles with later version like 3.9. Anaconda supports very well in managing your environment, so you may want to install it here: ```cd
-https://www.anaconda.com/products/individual
-```
-Then, you can create an environment with specific version with this command (run on your Anaconda terminal): 
-```
+Scrapy works best with python 3.6 – 3.7, so we recommend you create an environment with this version inside, we have undergone some troubles with later version like 3.9. Anaconda supports very well in managing your environment, so you may want to install it here: https://www.anaconda.com/products/individual
+
+Then, you can create an environment with specific version with this command (run on your Anaconda terminal):
+
+```cd
 conda create -n myenv python=3.6
 ```
+
 Install libraries Scrapy and Selenium, as well as some supported library like Loguru and Json:
-```
+
+```cd
 pip install scrapy
 ```
-```
+
+```cd
 pip install selenium
 ```
-```
+
+```cd
 pip install loguru
 ```
-```
+
+```cd
 pip install json
 ```
+
 We use FireFox as a web browser for this project, so you have to install Geckodriver to support for it: 
 https://github.com/mozilla/geckodriver/releases .<br />
 
@@ -47,11 +53,14 @@ F:\...\...\...\steamcrawl>.<br />
 ## Crawling data
 
 First move to file steamcrawl
-```
+
+```cd
 cd /steamcrawl
 ```
+
 Then run the spider by command:
-```
+
+```cd
 scrapy crawl steam
 ```
 
@@ -61,17 +70,22 @@ After running, you will receivei a file `products.csv`, which is our result data
 The system is item-based, using important features (or column in the dataset) of each game to find the similarity between them. 
 The similarity is calculated using Cosine Similarity and the CountVectorizer.
 Install the required libraries pandas and sklearn
-```
+
+```cd
 pip install -U scikit-learn
 ```
-```
+
+```cd
 pip install pandas
 ```
+
 ## Recommending Game
 Run function recommend_game(game). The 'game' argument is the name of the game that user like existed in the dataset.
 Example: The User like game 'Dota 2'
-```
+
+```cd
 recommend_game('Dota 2')
 ```
+
 The output is 10 games that have the most similarity to 'Dota 2'.
 ![](output.PNG)
